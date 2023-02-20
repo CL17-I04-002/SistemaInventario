@@ -1,14 +1,16 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using SistemaInventario.Models;
+using SistemaInventario.Modelos.ViewModels.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SistemaInventario.Controllers
+namespace SistemaInventario.Areas.Inventario.Controllers
 {
+    ///Indicaremos a que area pertenece
+    [Area("Inventario")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

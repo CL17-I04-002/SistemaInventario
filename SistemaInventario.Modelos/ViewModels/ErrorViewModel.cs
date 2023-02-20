@@ -1,6 +1,6 @@
 using System;
 
-namespace SistemaInventario.Models
+namespace SistemaInventario.Modelos.ViewModels.Models
 {
     public class ErrorViewModel
     {
