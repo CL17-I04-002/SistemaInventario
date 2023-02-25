@@ -11,6 +11,13 @@ namespace SistemaInventario.AccesoDatos.Repositorio
     public class UnidadTrabajo : IUnidadTrabajo
     {
         private readonly ApplicationDbContext _db;
+        /*
+         * En este caso usamos la interfaz Al definir una propiedad de tipo concreto BodegaRepositorio en lugar de una interfaz IBodegaRepositorio,
+         * estás acoplándote directamente a esa implementación concreta, lo que hace que tu código sea menos flexible y más difícil de mantener.
+         * Si en el futuro decides cambiar la implementación de BodegaRepositorio, tendrías que cambiar el código en muchos lugares. Pero si usas la interfaz
+         * IBodegaRepositorio en su lugar, puedes cambiar la implementación sin cambiar el código que la utiliza, ya que las interfaces definen solo el contrato
+         * que debe cumplir la implementación, no los detalles de la implementación en sí.
+         */
         public IBodegaRepositorio Bodega { get; private set; }
 
         public UnidadTrabajo(ApplicationDbContext db)

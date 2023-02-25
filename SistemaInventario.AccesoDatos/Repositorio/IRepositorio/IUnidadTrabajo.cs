@@ -13,6 +13,9 @@ namespace SistemaInventario.AccesoDatos.Repositorio.IRepositorio
 
     public interface IUnidadTrabajo : IDisposable
     {
+        ///Dejamos dicha propiedad solo accesible como lectura
         IBodegaRepositorio Bodega { get; }
+        ///Acá vamos a declarar el método Guardar de manera persistente en nuestra BD
+        void Guardar();
     }
 }

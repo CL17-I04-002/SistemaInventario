@@ -35,7 +35,6 @@ namespace SistemaInventario.AccesoDatos.Repositorio.IRepositorio
             );
 
         void Agregar(T entidad);
-
         void Remover(int id);
         void Remover(T entidad);
         void RemoverRango(IEnumerable<T> entidad);

@@ -21,14 +21,20 @@ namespace SistemaInventario.AccesoDatos.Repositorio
         public void Actualizar(Bodega bodega)
         {
             ///Esta variable traera el dato de la bodega actual que luego queremos modificar
+            /*
+             * Usaremos FirstOrDefault: Retorna el primer elemento que coincide con la consulta, o el valor predeterminado si no hay ningún elemento
+             * que cumpla con la consulta. Si la consulta devuelve varios elementos, solo se devuelve el primero.
+             * Y ya que con SingleOrDefault: Si la consulta devuelve varios elementos, se lanza una excepción.
+             */
             var bodegaDb = _db.Bodegas.FirstOrDefault(b => b.Id == bodega.Id);
-            if(bodegaDb != null)
+            if (bodegaDb != null)
             {
                 bodegaDb.Nombre = bodega.Nombre;
                 bodegaDb.Descripcion = bodega.Descripcion;
                 bodegaDb.Estado = bodega.Estado;
 
-                _db.SaveChanges();
+                ///Vamos usar un método que servirá para guardar en diferentes sitios y no solo con Actualizar
+                
             }
         }
     }
