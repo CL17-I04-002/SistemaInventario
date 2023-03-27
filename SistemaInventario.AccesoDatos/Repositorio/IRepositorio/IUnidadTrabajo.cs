@@ -15,6 +15,8 @@ namespace SistemaInventario.AccesoDatos.Repositorio.IRepositorio
     {
         ///Dejamos dicha propiedad solo accesible como lectura
         IBodegaRepositorio Bodega { get; }
+        ///Agregamos ICateogoriaRepositorio
+        ICategoriaRepsoitorio Categoria { get; }
         ///Acá vamos a declarar el método Guardar de manera persistente en nuestra BD
         void Guardar();
     }

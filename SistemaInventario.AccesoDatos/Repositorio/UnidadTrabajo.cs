@@ -19,11 +19,13 @@ namespace SistemaInventario.AccesoDatos.Repositorio
          * que debe cumplir la implementación, no los detalles de la implementación en sí.
          */
         public IBodegaRepositorio Bodega { get; private set; }
+        public ICategoriaRepsoitorio Categoria { get; private set; }
 
         public UnidadTrabajo(ApplicationDbContext db)
         {
             _db = db;
             this.Bodega = new BodegaRepositorio(_db);
+            this.Categoria = new CategoriaRepositorio(_db);
             
         }
         ///Aqui vamos aplicar el guardado persistente en la BD
