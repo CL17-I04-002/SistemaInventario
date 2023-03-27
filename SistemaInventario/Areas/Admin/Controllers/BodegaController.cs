@@ -79,6 +79,19 @@ namespace SistemaInventario.Areas.Admin.Controllers
             var todos = _unidadTrabajo.Bodega.ObtenerTodos();
             return Json(new { data = todos });
         }
+
+        [HttpDelete]
+        public IActionResult Delete(int id)
+        {
+            var bodegaDb = _unidadTrabajo.Bodega.Obtener(id);
+            if(bodegaDb == null)
+            {
+                return Json(new { success = false, message = "Error al Borrar" });
+            }
+            _unidadTrabajo.Bodega.Remover(bodegaDb);
+            _unidadTrabajo.Guardar();
+            return Json(new { success = true, message = "Borrado Exitosamente" });
+        }
         #endregion
     }
 }
