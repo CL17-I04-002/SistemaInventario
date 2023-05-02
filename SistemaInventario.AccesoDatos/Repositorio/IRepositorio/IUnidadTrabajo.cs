@@ -18,6 +18,7 @@ namespace SistemaInventario.AccesoDatos.Repositorio.IRepositorio
         ///Agregamos ICateogoriaRepositorio
         ICategoriaRepsoitorio Categoria { get; }
         IMarcaRepositorio Marca { get; }
+        IProductoRepositorio Producto { get; }
         ///Acá vamos a declarar el método Guardar de manera persistente en nuestra BD
         void Guardar();
     }

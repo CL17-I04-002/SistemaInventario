@@ -21,12 +21,14 @@ namespace SistemaInventario.AccesoDatos.Repositorio
         public IBodegaRepositorio Bodega { get; private set; }
         public ICategoriaRepsoitorio Categoria { get; private set; }
         public IMarcaRepositorio Marca { get; private set; }
+        public IProductoRepositorio Producto { get; private set; }
         public UnidadTrabajo(ApplicationDbContext db)
         {
             _db = db;
             this.Bodega = new BodegaRepositorio(_db);
             this.Categoria = new CategoriaRepositorio(_db);
             this.Marca = new MarcaRepositorio(_db);
+            Producto = new ProductoRepositorio(_db);
             
         }
         ///Aqui vamos aplicar el guardado persistente en la BD
