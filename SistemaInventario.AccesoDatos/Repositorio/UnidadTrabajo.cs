@@ -22,6 +22,7 @@ namespace SistemaInventario.AccesoDatos.Repositorio
         public ICategoriaRepsoitorio Categoria { get; private set; }
         public IMarcaRepositorio Marca { get; private set; }
         public IProductoRepositorio Producto { get; private set; }
+        public IUsuarioAplicacionRepositorio UsuarioAplicacion { get; private set; }
         public UnidadTrabajo(ApplicationDbContext db)
         {
             _db = db;
@@ -29,6 +30,7 @@ namespace SistemaInventario.AccesoDatos.Repositorio
             this.Categoria = new CategoriaRepositorio(_db);
             this.Marca = new MarcaRepositorio(_db);
             Producto = new ProductoRepositorio(_db);
+            this.UsuarioAplicacion = new UsuarioAplicacionRepositorio(_db);
             
         }
         ///Aqui vamos aplicar el guardado persistente en la BD
